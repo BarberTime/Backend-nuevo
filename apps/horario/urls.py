@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import HorarioAPIView
+from .views import HorarioList, HorarioDetail, HorarioUpdate, HorarioDelete
 
 urlpatterns = [
-    path('api/v1/horarios/', HorarioAPIView.as_view(), name='api_horarios'),
+    path('api/horario/', HorarioList.as_view(), name='horario-list'),
+    path('api/horario/<uuid:id_horario>/', HorarioDetail.as_view(), name='horario-detail'),
+    path('api/horario/<uuid:id_horario>/actualizar/', HorarioUpdate.as_view(), name='horario-update'),
+    path('api/horario/<uuid:id_horario>/eliminar/', HorarioDelete.as_view(), name='horario-delete'),
 ]

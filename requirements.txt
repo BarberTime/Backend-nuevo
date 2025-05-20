@@ -1,2 +1,8 @@
 django
 djangorestframework
+django-cors-headers
+cloudinary
+pillow
+django-tenant-schemas
+psycopg2-binary
+cloudinary_storage

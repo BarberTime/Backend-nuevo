@@ -1,12 +1,12 @@
 from django.db import models
 from apps.negocio.models import Negocio 
-from apps.usuario.models import Usuario 
+from django.contrib.auth.models import User
 from apps.servicio.models import Servicio 
 import uuid   
 class Reserva(models.Model):
     id_reserva = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     negocio = models.ForeignKey(Negocio, on_delete=models.CASCADE)
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     fecha = models.DateField()
     hora = models.TimeField()

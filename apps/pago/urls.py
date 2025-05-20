@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import PagoAPIView
+from .views import PagoList, PagoDetail, PagoUpdate, PagoDelete
 
 urlpatterns = [
-    path('api/v1/pagos/', PagoAPIView.as_view(), name='api_pagos'),
+    path('api/pago/', PagoList.as_view(), name='pago-list'),
+    path('api/pago/<uuid:id_pago>/', PagoDetail.as_view(), name='pago-detail'),
+    path('api/pago/<uuid:id_pago>/actualizar/', PagoUpdate.as_view(), name='pago-update'),
+    path('api/pago/<uuid:id_pago>/eliminar/', PagoDelete.as_view(), name='pago-delete'),
 ]
