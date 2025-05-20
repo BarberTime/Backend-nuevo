@@ -22,6 +22,13 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-dg47!%dz!uev=6p*0+--ia3-_x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
+# Cloudinary configuration
+CLOUDINARY = {
+    'cloud_name': 'Cdcld4chdx',
+    'api_key': 'C983364344456282',
+    'api_secret': 'Th8gojntsJ8biyOxYqQ7SPE5ldU'
+}
+
 # Media and Static files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
