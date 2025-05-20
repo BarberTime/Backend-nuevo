@@ -5,7 +5,6 @@ cloudinary
 pillow
 django-tenant-schemas
 psycopg2-binary
-cloudinary_storage
 dj-database-url
 gunicorn
 whitenoise
