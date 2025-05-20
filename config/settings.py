@@ -121,11 +121,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bd_barberia',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '7659',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'YIEghInLwKSrjfecZzYljGxXqhQHXwwU',
+        'HOST': 'shinkansen.proxy.rlwy.net',  
+        'PORT': '17150',      
     }
 }
 
