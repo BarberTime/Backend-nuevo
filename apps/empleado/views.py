@@ -52,8 +52,7 @@ class SubirFotoPerfil(generics.CreateAPIView):
         empleado_id = request.data.get('empleado_id')
         if not empleado_id:
             return Response({'error': 'empleado_id is required'}, status=400)
-        
-        # Verificar que el empleado pertenece al negocio del usuario actual
+
         empleado = Empleado.objects.get(id_empleado=empleado_id, negocio__usuario=request.user)
         empleado = serializer.save(empleado_id=empleado_id)
         return Response({'message': 'Foto de perfil subida exitosamente'}, status=201)
@@ -66,8 +65,7 @@ class EliminarFotoPerfil(generics.DestroyAPIView):
         empleado_id = request.data.get('empleado_id')
         if not empleado_id:
             return Response({'error': 'empleado_id is required'}, status=400)
-        
-        # Verificar que el empleado pertenece al negocio del usuario actual
+
         empleado = Empleado.objects.get(id_empleado=empleado_id, negocio__usuario=request.user)
         serializer = self.get_serializer()
         serializer.save(empleado_id=empleado_id)

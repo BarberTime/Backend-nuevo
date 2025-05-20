@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import os
 from pathlib import Path
-import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,17 +21,6 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-dg47!%dz!uev=6p*0+--ia3-_x
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-
-# Cloudinary configuration
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('dcld4chdx'),
-    'API_KEY': os.getenv('983364344456282'),
-    'API_SECRET': os.getenv('Th8gojntsJ8biyOxYqQ7SPE5ldU')
-}
-
-# Default file storage
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # Media and Static files
 MEDIA_URL = '/media/'
@@ -68,8 +56,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-    'cloudinary_storage',
     'cloudinary',
+    'cloudinary_storage',
     'apps.categoria',
     'apps.horario',
     'apps.imagenes_negocio',
