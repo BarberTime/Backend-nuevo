@@ -8,3 +8,4 @@ psycopg2-binary
 cloudinary_storage
 dj-database-url
 gunicorn
+whitenoise
